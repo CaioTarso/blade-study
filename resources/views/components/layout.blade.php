@@ -31,7 +31,7 @@
 
     <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
         <div>
-            <p>© {{ date('Y') }} Não é o Twitter - Built with Laravel and ❤️</p>
+            <p>© {{ date('Y') }} Não é o Twitter - Nenhum direito reservado</p>
         </div>
     </footer>
 </body>
