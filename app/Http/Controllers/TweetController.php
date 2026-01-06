@@ -12,4 +12,22 @@ class TweetController extends Controller
         $tweets = Tweet::with('user')->latest()->take(50)->get();
         return view('home', ['tweets' => $tweets]);
     }
+
+
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        'message' => 'required|string|max:255',
+    ], [
+        'message.required' => 'O campo de mensagem é obrigatório.',
+        'message.max' => 'A mensagem não pode exceder 255 caracteres.',
+    ]);
+
+    Tweet::create([
+        'message' => $validated['message'],
+        'user_id' => null, 
+    ]);
+
+    return redirect('/')->with('success', 'Tweet criado!');
+}
 }

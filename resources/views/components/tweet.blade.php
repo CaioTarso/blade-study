@@ -29,7 +29,7 @@
                     <span class="text-sm text-base-content/60">{{ $tweet->created_at->diffForHumans() }}</span>
                 </div>
 
-                <p class="mt-1">
+                <p class="mt-1 break-words overflow-wrap">
                     {{ $tweet->message }}
                 </p>
             </div>
