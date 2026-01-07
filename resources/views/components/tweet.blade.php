@@ -31,21 +31,20 @@
                         @endif
                     </div>
 
-                    <div class="flex gap-1">
-                        <a href="/tweets/{{ $tweet->id }}/edit" class="btn btn-ghost btn-xs">
-                            Edit
-                        </a>
-                        <form method="POST" action="/tweets/{{ $tweet->id }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit"
-                                onclick="return confirm('Tem certeza que deseja deletar este tweet?')"
-                                class="btn btn-ghost btn-xs text-error">
-                                Delete
-                            </button>
-                        </form>
-                    </div>
+                    
+                    @if (Auth::check() && $tweet->user && Auth::id() === $tweet->user->id)
+                        <div class="flex gap-1">
+                            <a href="/tweets/{{ $tweet->id }}/edit" class="btn btn-ghost btn-xs">
+                                 Editar 
+                            </a>
+                            <form method="POST" action="/tweets/{{ $tweet->id }}"> @csrf @method('DELETE') <button
+                                    type="submit" onclick="return confirm('Tem certeza que você quer deletar esse tweet?')"
+                                    class="btn btn-ghost btn-xs text-error"> Deletar </button>
+                            </form>
+                        </div>
+                    @endif
                 </div>
+
                  <p class="mt-1 break-words overflow-wrap">
                     {{ $tweet->message }}
                 </p>

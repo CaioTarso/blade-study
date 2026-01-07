@@ -20,8 +20,16 @@
             </a>
         </div>
         <div class="navbar-end gap-2">
-            <a href="#" class="btn btn-ghost btn-sm">Entrar</a>
-            <a href="#" class="btn bg-blue-500 hover:bg-blue-600 text-white btn-sm">Cadastrar</a>
+            @auth
+                <span class="text-sm">{{ auth()->user()->name }}</span>
+                <form method="POST" action="/logout" class="inline">
+                    @csrf
+                    <button type="submit" class="btn btn-ghost btn-sm">Sair</button>
+                </form>
+            @else
+                <a href="/login" class="btn btn-ghost btn-sm">Entrar</a>
+                <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Cadastrar</a>
+            @endauth
         </div>
     </nav>
 
