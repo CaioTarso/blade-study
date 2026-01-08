@@ -16,7 +16,7 @@
                         <label class="floating-label mb-6">
                             <input type="email"
                                    name="email"
-                                   placeholder="[mail@example.com](<mailto:mail@example.com>)"
+                                   placeholder="email@example.com"
                                    value="{{ old('email') }}"
                                    class="input input-bordered @error('email') input-error @enderror"
                                    required
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-control mt-8">
-                            <button type="submit" class="btn btn-primary btn-sm w-full">
+                            <button type="submit" class="btn bg-blue-500 hover:bg-blue-600 text-white btn-sm w-full">
                                 Entrar
                             </button>
                         </div>

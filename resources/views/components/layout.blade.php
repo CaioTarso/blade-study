@@ -14,15 +14,15 @@
 <body class="min-h-screen flex flex-col bg-base-200 font-sans">
     <nav class="navbar bg-base-100">
         <div class="navbar-start">
-            <div class="flex items-center gap-2">
+            <a href="/" class="btn btn-ghost text-xl">
                 <img src="{{ asset('images/twitterlogo.png') }}" alt="Logo" class="h-8 w-8">
-                 <span class="text-xl font-bold">Não é o Twitter</span>
-            </div>
+                 Não é o Twitter
+            </a>
         </div>
         <div class="navbar-end gap-2">
             @auth
                 <span class="text-sm">{{ auth()->user()->name }}</span>
-                <form method="POST" action="{{ route('logout') }}" class="inline">
+                <form method="POST" action="{" class="inline">
                     @csrf
                     <button type="submit" class="btn btn-ghost btn-sm">Sair</button>
                 </form>
