@@ -30,8 +30,8 @@
                     </div>
  
                     <div class="mt-4 flex items-center justify-end">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            Tweetar
+                        <button type="submit" class="btn bg-blue-500 text-white btn-sm">
+                            Postar
                         </button>
                     </div>
                 </form>

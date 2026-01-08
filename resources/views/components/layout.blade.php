@@ -28,7 +28,7 @@
                 </form>
             @else
                 <a href="/login" class="btn btn-ghost btn-sm">Entrar</a>
-                <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Cadastrar</a>
+                <a href="{{ route('register') }}" class="btn bg-blue-500 text-white btn-sm">Cadastrar</a>
             @endauth
         </div>
     </nav>
